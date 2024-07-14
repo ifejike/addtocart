@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const plusButtons = document.querySelectorAll(".fa-plus-circle");
     const minusButtons = document.querySelectorAll(".fa-minus-circle");
     const totalElement = document.querySelector(".total");
+    const loveButtons = document.querySelectorAll(".fa-heart");
+    const deleteItems = document.querySelectorAll(".fa-trash-alt")
   
     const updateTotalPrice = () => {
       let totalPrice = 0;
@@ -38,5 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    // * Changing the colour of the love icon when clicked to show like and dislike
+
+    loveButtons.forEach(love => {
+      love.addEventListener("click", () => {
+        love.classList.toggle("loved");
+      });
+    });
+
+    deleteItems.forEach(del => {
+      del.addEventListener("click", () => {
+          const card = del.closest(".card");
+          card.remove();
+          updateTotalPrice();
+      })
+    })
+
   });
   

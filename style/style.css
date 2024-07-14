@@ -66,3 +66,8 @@ main {
 .fa-trash-alt {
   color: #de6b5c;
 }
+
+
+.fa-heart.loved {
+  color: #de6b5c;
+}
